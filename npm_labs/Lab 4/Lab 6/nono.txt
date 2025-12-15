@@ -1,0 +1,35 @@
+// fs.writeFile('output.txt',"Welcome to world",(err)=>{
+//     if(err){
+//         console.log("Error:");
+//     }
+//     console.log("Write")
+// })
+// console.log("hii");3//
+//try{
+// fs.writeFileSync('demo.txt',"hello");
+// console
+//}catch(err){
+//console.log(err);
+//}
+
+
+// if(err){
+//     if(err.code === 'EXIST'){
+//         console.log("foldere f k")
+//     }
+// }6//
+
+
+// fs.readdir('.../Lab 6',(err,data)=>{
+//     if(er)
+// })
+
+// fs.watch('.',(eventType,filename)=>{
+//     if(filename==='demo.txt'){
+//         console.log(`Event ${eventType},File:${filename}`);
+//     }
+// })
+
+
+//  data =fs.readFileSync('hello.txt','utf8')
+//  console.log(data);2//
