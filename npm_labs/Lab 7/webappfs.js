@@ -5,16 +5,16 @@ const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "text/html");
   if (req.url === "/") {
     res.statusCode = 200;
-    res.end(fs.readFileSync("about.txt","utf-8"));
+    res.end("Home Page");
   } else if (req.url === "/about") {
     res.statusCode = 200;
-    res.end("About Page");
+    res.end(fs.readFileSync("about.txt", "utf-8"));
   } else if (req.url === "/contact") {
     res.statusCode = 200;
-    res.end("Contact Page");
-  } else if (req.url === "/Login") {
+    res.end(fs.readFileSync("contact.txt", "utf-8"));
+  } else if (req.url === "/login") {
     res.statusCode = 200;
-    res.end("LogIn Page");
+    res.end(fs.readFileSync("login.txt", "utf-8"));
   } else {
     res.statusCode = 404;
     res.end("404! Page not found");
