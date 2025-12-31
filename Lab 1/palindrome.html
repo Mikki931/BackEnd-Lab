@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n=parseInt(prompt("Enter n:"))
+        var rev=0
+        var temp=n
+        while(temp!=0){
+            var digit=temp%10
+            rev=rev*10+digit 
+            temp=parseInt(temp/10)
+        }
+        if(rev==n) alert(n+" is a Palindrome")
+        else alert(n+" is not a Palindrome")
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n=parseInt(prompt("Enter n:"))
+        var temp=n,count=0,sum=0
+        while(temp!=0){
+            temp=parseInt(temp/10)
+            count++
+        }
+        temp=n;
+        while(temp!=0){
+            var r=temp%10
+            sum+=Math.pow(r,count)
+            temp=parseInt(temp/10)
+        }
+        if(sum==n) alert(n+" is a ArmStrong")
+        else alert(n+" is not a ArmStrong")
+    </script>
+</body>
+</html>
