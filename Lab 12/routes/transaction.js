@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const Transaction = require("../models/Transaction"); // exact file name
-const Book = require("../models/Books"); // exact file name
-const Student = require("../models/Student"); // exact file name
+const Transaction = require("../models/Transaction");
+const Book = require("../models/Books");
+const Student = require("../models/Student");
 const { verifyToken } = require("../middleware/auth");
 
 // Issue a book
@@ -37,7 +37,7 @@ router.post("/issue", verifyToken, async (req, res) => {
     const transaction = await Transaction.create({
       studentId,
       bookId,
-      quantity: copies, // match schema
+      quantity: copies,
       status: "ISSUED",
       issueDate: new Date(),
     });
