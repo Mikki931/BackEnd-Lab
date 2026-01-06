@@ -2,6 +2,7 @@ const express = require("express");
 //mongoose is orm
 const mongoose = require("mongoose");
 const Lecture = require("./models/Lecture");
+const jwt = require("jsonwebtoken");
 
 const app = express();
 
@@ -17,15 +18,38 @@ mongoose
     });
 
     //async and await comes in pair
-    app.get("/users", async (req, res) => {
-      const data = await Lecture.find();
-      res.send(data);
-    });
+    // app.get("/users", async (req, res) => {
+    //   try{
+
+    //     const data = await Lecture.find();
+    //     res.send(data);
+    //   } catch(e){
+    //     res.status(401).send("UnAuthorized");
+    //   }
+    // });
 
     // app.get("/users/emailverified/:status", async (req, res) => {
     //   const data = await Lecture.find({isemailverified:req.params.status});
     //   res.send(data);
     // });
+
+    app.post("/login", async (req, res) => {
+      const data = await Lecture.find({
+        usename: req.body.username,
+        password: req.body.password,
+      });
+      if (data.length > 0) {
+        const token = await jwt.sign(
+          { id: data._id, email: data.email },
+          "mysecretkey"
+        );
+        res.send("Valid");
+      } else {
+        res.send("not valid");
+      }
+      console.log(data);
+      res.send(data);
+    });
 
     app.get("/users/:id", async (req, res) => {
       const data = await Lecture.findOne({ _id: req.params.id });
